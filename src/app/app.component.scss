@@ -1,0 +1,36 @@
+.app {
+}
+
+nav {
+  padding: 10px;
+}
+
+.topNav {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+
+  border-width: 0 0 2px 0;
+  border-color: rgb(0, 102, 255);
+  border-style: solid;
+  box-shadow: 0 0 25px 0;
+}
+
+.navLeft {
+  display: inline;
+}
+
+.navRight {
+  float: right;
+}
+
+.bottomNav {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+
+  border-width: 2px 0 0 0;
+  border-color: rgb(0, 102, 255);
+  border-style: solid;
+  box-shadow: 0 0 25px 0;
+}
