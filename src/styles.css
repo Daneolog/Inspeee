@@ -100,6 +100,11 @@ div.overlay > * {
   margin-bottom: 5px;
 }
 
+.buttons {
+  width: 100%;
+  margin-top: 10px;
+}
+
 /* eye burning code plz delete */
 /* div {
   border: 1px;
