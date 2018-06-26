@@ -1,0 +1,35 @@
+<div class="overlay">
+  <h2>Loan Offer</h2>
+
+  <div class="center">
+    <label>Low End</label>
+    <input type="range" [(ngModel)]="preferenceBar">
+    <label>High End</label>
+  </div>
+
+  <h3>Payback in:</h3>
+
+
+  <div class="center">
+    <div class="card" *ngFor="let pt of paymentTypes" [ngClass]="active == pt.id ? 'selected' : 'regular'">
+      {{pt.length}} Months
+      <hr>
+      <p>Payment/Month: {{pt.payment}}</p>
+      <p>Interest Rate: {{pt.rate}}</p>
+      <p>APR: {{pt.apr}}</p>
+
+      <button (click)="select(pt.id)">Select this guy!!!</button>
+    </div>
+  </div>
+
+  <table style="width: 100%; margin-top: 10px; text-align: left">
+    <tr>
+      <td>
+        <a class="button" routerLink="/sign-up">Previous</a>
+      </td>
+      <td style="text-align: right">
+        <a class="button" routerLink="/upload-documents">Next</a>
+      </td>
+    </tr>
+  </table>
+</div>

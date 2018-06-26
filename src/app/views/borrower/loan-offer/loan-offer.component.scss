@@ -1,0 +1,57 @@
+.overlay {
+  margin: auto;
+  width: 30%;
+  background: lightgray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+a.button {
+  cursor: default;
+  outline: 0;
+  background: #9f72e6;
+  border: 0;
+  border-radius: 2px;
+  padding: 5px 10px;
+  text-align: center;
+  color: #fff;
+
+  &:hover {
+    background: #b290e7;
+    text-decoration: none;
+  }
+  &:active {
+    background: #7947c9;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background: #b598e4;
+  }
+}
+
+div.center {
+  display: inline-block;
+}
+
+div.card {
+  display: inline-block;
+  background: white;
+  width: fit-content;
+  margin: 10px;
+  padding: 10px;
+  border: 10px;
+  text-align: center;
+  border-radius: 5px;
+
+  &.selected {
+    border: 1px solid #00ccff;
+    box-shadow: 0 0 10px 0 #00ccff;
+  }
+
+  &.regular {
+    border: none;
+    box-shadow: 0 0 10px 0 gray;
+  }
+}
