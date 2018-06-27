@@ -44,6 +44,7 @@ div.card {
   border: 10px;
   text-align: center;
   border-radius: 5px;
+  transition: 0.5s;
 
   &.selected {
     border: 1px solid #00ccff;
@@ -52,6 +53,6 @@ div.card {
 
   &.regular {
     border: none;
-    box-shadow: 0 0 10px 0 gray;
+    // box-shadow: 0 0 10px 0 gray;
   }
 }

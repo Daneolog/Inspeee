@@ -12,6 +12,7 @@ import { RegisterComponent } from './views/borrower/register/register.component'
 import { BankDetailsComponent } from './views/borrower/bank-details/bank-details.component';
 import { LoanOfferComponent } from './views/borrower/loan-offer/loan-offer.component';
 import { UploadDocumentsComponent } from './views/borrower/upload-documents/upload-documents.component';
+import { PaybackScheduleComponent } from './views/borrower/payback-schedule/payback-schedule.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'bank-details', component: BankDetailsComponent },
   { path: 'loan-offer', component: LoanOfferComponent },
   { path: 'upload-documents', component: UploadDocumentsComponent },
+  { path: 'payback-schedule', component: PaybackScheduleComponent },
   { path: '**', component: ErrorComponent }
 ];
 
@@ -41,7 +43,8 @@ const routes: Routes = [
     RegisterComponent,
     BankDetailsComponent,
     LoanOfferComponent,
-    UploadDocumentsComponent
+    UploadDocumentsComponent,
+    PaybackScheduleComponent
   ]
 })
 export class AppModule {}

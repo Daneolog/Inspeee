@@ -1,19 +1,21 @@
-.center {
-  font-size: 5rem;
-  text-align: center;
+.overlay {
+  margin: auto;
+  width: 30%;
+  background: lightgray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 a.button {
-  display: inline-block;
   cursor: default;
   outline: 0;
   background: #9f72e6;
   border: 0;
   border-radius: 2px;
-  padding: 15px 20px;
+  padding: 5px 10px;
   text-align: center;
   color: #fff;
-  font-size: 20px;
 
   &:hover {
     background: #b290e7;
@@ -28,7 +30,12 @@ a.button {
   }
 }
 
-.overlay {
-  margin-top: 10px;
-  margin-bottom: 10px;
+div.card {
+  vertical-align: top;
+  display: inline-block;
+  background: white;
+  width: fit-content;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 3px;
 }
