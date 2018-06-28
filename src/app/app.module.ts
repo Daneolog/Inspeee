@@ -1,29 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './views/home/home.component';
-import { CheckRateComponent } from './views/borrower/check-rate/check-rate.component';
-import { ErrorComponent } from './views/error/error.component';
-import { RegisterComponent } from './views/borrower/register/register.component';
-import { BankDetailsComponent } from './views/borrower/bank-details/bank-details.component';
-import { LoanOfferComponent } from './views/borrower/loan-offer/loan-offer.component';
-import { UploadDocumentsComponent } from './views/borrower/upload-documents/upload-documents.component';
-import { PaybackScheduleComponent } from './views/borrower/payback-schedule/payback-schedule.component';
+import { HomeComponent } from './views/misc/home/home.component';
+import { ErrorComponent } from './views/misc/error/error.component';
+import { BorrowerModule } from './views/borrower/borrower.module';
+import { LenderModule } from './views/lender/lender.module';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'borrow', redirectTo: 'check-rate' },
-  { path: 'check-rate', component: CheckRateComponent },
-  { path: 'sign-up', component: RegisterComponent },
-  { path: 'bank-details', component: BankDetailsComponent },
-  { path: 'loan-offer', component: LoanOfferComponent },
-  { path: 'upload-documents', component: UploadDocumentsComponent },
-  { path: 'payback-schedule', component: PaybackScheduleComponent },
+  { path: 'lender', redirectTo: 'deposit-withdrawal' },
   { path: '**', component: ErrorComponent }
 ];
 
@@ -31,20 +20,10 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule,
-    ComponentsModule
+    BorrowerModule,
+    LenderModule
   ],
   bootstrap: [AppComponent],
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ErrorComponent,
-    CheckRateComponent,
-    RegisterComponent,
-    BankDetailsComponent,
-    LoanOfferComponent,
-    UploadDocumentsComponent,
-    PaybackScheduleComponent
-  ]
+  declarations: [AppComponent, HomeComponent, ErrorComponent]
 })
 export class AppModule {}

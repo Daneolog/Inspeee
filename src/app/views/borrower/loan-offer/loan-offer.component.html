@@ -1,5 +1,5 @@
 <div class="overlay">
-  <h2>Loan Offer</h2>
+  <h2 style="text-align: center">Loan Offer</h2>
 
   <div class="center">
     <label>Low End</label>
@@ -11,15 +11,13 @@
 
 
   <div class="center">
-    <div class="card" *ngFor="let pt of paymentTypes" [ngClass]="active == pt.id ? 'selected' : 'regular'">
-      {{pt.length}} Months
-      <hr>
+    <card *ngFor="let pt of paymentTypes" title="{{pt.length}} months" [selected]="active == pt.id ? 'selected' : 'regular'">
       <p>Payment/Month: {{pt.payment}}</p>
       <p>Interest Rate: {{pt.rate}}</p>
       <p>APR: {{pt.apr}}</p>
 
       <button (click)="select(pt.id)">Select this guy!!!</button>
-    </div>
+    </card>
   </div>
 
   <table class="buttons" style="text-align: left">
