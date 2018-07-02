@@ -58,7 +58,7 @@ button {
   background: #9f72e6;
   border: 0;
   border-radius: 2px;
-  padding: 5px 10px;
+  padding: 7px 10px;
   text-align: center;
   color: #fff;
 }
@@ -95,6 +95,9 @@ h4 {
   font-size: 18px;
   font-weight: 300;
   margin: 0 0 20px 0;
+}
+hr {
+  border: 1px solid gray;
 }
 
 form > *,

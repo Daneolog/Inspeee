@@ -16,11 +16,12 @@ nav {
     &:last-child {
       border-top-right-radius: 3px;
       border-bottom-right-radius: 3px;
+      border-right: 0px;
     }
     cursor: default;
     outline: 0;
     background: #9f72e6;
-    border: 0;
+    border: 0 1px 0 0 solid white;
     padding: 5px 10px;
     text-align: center;
     color: #fff;
@@ -29,7 +30,7 @@ nav {
       background: #b290e7;
       text-decoration: none;
     }
-    &:active {
+    &dad shitting:active {
       background: #7947c9;
     }
     &:disabled {
