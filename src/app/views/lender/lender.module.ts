@@ -7,6 +7,7 @@ import { DepositWithdrawalComponent } from './deposit-withdrawal/deposit-withdra
 import { DepositComponent } from './deposit-withdrawal/deposit/deposit.component';
 import { ErrorComponent } from './deposit-withdrawal/error/error.component';
 import { RegisterComponent } from './register/register.component';
+import { WithdrawComponent } from './deposit-withdrawal/withdraw/withdraw.component';
 
 @NgModule({
   imports: [CommonModule, LenderRoutingModule, ComponentsModule],
@@ -14,7 +15,8 @@ import { RegisterComponent } from './register/register.component';
     DepositWithdrawalComponent,
     DepositComponent,
     ErrorComponent,
-    RegisterComponent
+    RegisterComponent,
+    WithdrawComponent
   ]
 })
 export class LenderModule {}
