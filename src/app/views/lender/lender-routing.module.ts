@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DepositWithdrawalComponent } from './deposit-withdrawal/deposit-withdrawal.component';
 import { DepositComponent } from './deposit-withdrawal/deposit/deposit.component';
-import { ErrorComponent } from './error/error.component';
+import { ErrorComponent } from './deposit-withdrawal/error/error.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
+  { path: 'sign-up-register', component: RegisterComponent },
   {
     path: 'deposit-withdrawal',
     component: DepositWithdrawalComponent,

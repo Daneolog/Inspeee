@@ -1,9 +1,9 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "date-field",
-  styleUrls: ["date-field.component.scss"],
-  templateUrl: "date-field.component.html"
+  selector: 'app-date-field',
+  styleUrls: ['date-field.component.scss'],
+  templateUrl: 'date-field.component.html'
 })
 export class DateFieldComponent {
   month: number;

@@ -12,9 +12,9 @@
 
   <div class="center">
     <card *ngFor="let pt of paymentTypes" title="{{pt.length}} months" [selected]="active == pt.id ? 'selected' : 'regular'">
-      <p>Payment/Month: {{pt.payment}}</p>
-      <p>Interest Rate: {{pt.rate}}</p>
-      <p>APR: {{pt.apr}}</p>
+      <p>Payment/Month: {{pt.payment | currency}}</p>
+      <p>Interest Rate: {{pt.rate}}%</p>
+      <p>APR: {{pt.apr}}%</p>
 
       <button (click)="select(pt.id)">Select this guy!!!</button>
     </card>
@@ -23,7 +23,7 @@
   <table class="buttons" style="text-align: left">
     <tr>
       <td>
-        <a class="button" routerLink="/sign-up">Previous</a>
+        <a class="button" routerLink="/sign-up-borrower">Previous</a>
       </td>
       <td style="text-align: right">
         <a class="button" routerLink="/upload-documents">Next</a>
