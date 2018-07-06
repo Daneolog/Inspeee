@@ -1,0 +1,34 @@
+.overlay {
+  margin: auto;
+  width: 40%;
+  background: lightgray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+table.items {
+  border-collapse: collapse;
+}
+tr.items {
+  &:first-child {
+    border-bottom: 1px black solid;
+  }
+}
+th.items {
+  font-weight: bold;
+  padding: 7px;
+}
+td.items {
+  padding: 5px;
+  text-align: center;
+}
+
+td.summary {
+  font-weight: bold;
+  padding: 5px;
+}
+
+.align-right {
+  text-align: right;
+}
