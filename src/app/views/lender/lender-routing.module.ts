@@ -6,6 +6,7 @@ import { ErrorComponent } from './deposit-withdrawal/error/error.component';
 import { RegisterComponent } from './register/register.component';
 import { WithdrawComponent } from './deposit-withdrawal/withdraw/withdraw.component';
 import { InvestmentConfirmationComponent } from './investment-confirmation/investment-confirmation.component';
+import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 
 const routes: Routes = [
   { path: 'sign-up-register', component: RegisterComponent },
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'investment-confirmation',
     component: InvestmentConfirmationComponent
+  },
+  {
+    path: 'portfolio-details',
+    component: PortfolioDetailsComponent
   }
 ];
 
