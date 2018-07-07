@@ -9,7 +9,7 @@ import { InvestmentConfirmationComponent } from './investment-confirmation/inves
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 
 const routes: Routes = [
-  { path: 'sign-up-register', component: RegisterComponent },
+  { path: 'sign-up-lender', component: RegisterComponent },
   {
     path: 'deposit-withdrawal',
     component: DepositWithdrawalComponent,
