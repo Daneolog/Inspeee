@@ -2,18 +2,22 @@
   <h2 style="text-align: center">Payback Schedule</h2>
 
   <card title="Loan Terms">
-    <p>Total Loan Amount: {{totalLoanAmount}}</p>
-    <p>Interest Amount: {{interestAmount}}</p>
+    <p>Total loan amount: {{totalLoanAmount | currency}}</p>
+    <p>Interest amount: {{interestAmount | currency}}</p>
   </card>
 
   <card title="Paid Off Loan">
-    <p>Total Loan Amount: {{paidLoanAmount}}</p>
-    <p>Payment Made: {{paymentMade}}</p>
+    <p>Total paid so far: {{paidLoanAmount | currency}}</p>
+    <p>Payment made: {{months}} {{months == 1 ? 'month' : 'months'}}</p>
   </card>
 
   <card title="To Be Paid">
-    <p>Total Loan Amount: {{remainingLoanAmount}}</p>
-    <p>Months Left: {{remainingMonths}}</p>
-    <p>Monthly Payment: {{monthlyPayment}}</p>
+    <p>Left to be paid: {{remainingLoanAmount | currency}}</p>
+    <p>Months left: {{remainingMonths}} {{remainingMonths == 1 ? 'month' : 'months'}}</p>
+    <p>Monthly payment: {{monthlyPayment | currency}}</p>
   </card>
+  <br>
+  <label>Simulate your loan after </label>
+  <input type="number" [(ngModel)]="months" (input)="updateValues()" style="width: 55px">
+  <label> elapsed months</label>
 </div>

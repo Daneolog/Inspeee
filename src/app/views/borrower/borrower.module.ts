@@ -11,9 +11,17 @@ import { LoanOfferComponent } from './loan-offer/loan-offer.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { PaybackScheduleComponent } from './payback-schedule/payback-schedule.component';
 import { AgreementLetterComponent } from './agreement-letter/agreement-letter.component';
+import { BorrowerService } from '../../services/borrower.service';
+import { StorageServiceModule } from 'angular-webstorage-service';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, ComponentsModule, BorrowerRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    StorageServiceModule,
+    ComponentsModule,
+    BorrowerRoutingModule
+  ],
   declarations: [
     CheckRateComponent,
     RegisterComponent,
@@ -22,6 +30,7 @@ import { AgreementLetterComponent } from './agreement-letter/agreement-letter.co
     UploadDocumentsComponent,
     PaybackScheduleComponent,
     AgreementLetterComponent
-  ]
+  ],
+  providers: [BorrowerService]
 })
 export class BorrowerModule {}

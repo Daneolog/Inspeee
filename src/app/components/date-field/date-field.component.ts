@@ -10,7 +10,13 @@ export class DateFieldComponent {
   day: number;
   year: number;
 
-  getDate(): Date {
+  get date(): Date {
     return new Date(this.year, this.month - 1, this.day);
+  }
+
+  set date(date: Date) {
+    this.month = date.getMonth() + 1;
+    this.day = date.getDate();
+    this.year = date.getFullYear();
   }
 }

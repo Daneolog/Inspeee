@@ -2,16 +2,17 @@
   <h2 style="text-align: center">Check Your Rate</h2>
   <form>
     First name:
-    <input type="text" name="firstName">
+    <input type="text" #firstName>
     <br> Last name:
-    <input type="text" name="lastName">
+    <input type="text" #lastName>
     <br> Date of Birth:
     <app-date-field #dob style="width: 100%"></app-date-field>
     <br> Home Address
-    <input type="text" name="homeAddress">
+    <input type="text" #homeAddress>
     <br> Annual Income: $
-    <input type="text" name="annualIncome">
+    <input type="number" #annualIncome>
     <br>
+    <button (click)="submit()">Save</button>
 
     <table class="buttons">
       <tr>

@@ -3,8 +3,13 @@
 
   <div class="center">
     <label>Low End</label>
-    <input type="range" [(ngModel)]="preferenceBar">
+    <input type="range" [(ngModel)]="preferenceBar" min="100000" max="500000" (change)="updateValues($event.target.value)">
     <label>High End</label>
+  </div>
+
+  <div class="center">
+    <!-- <input type="text" [(ngModel)]="preferenceBar" disabled="true"> -->
+    <button disabled="true" style="font-size: 20px; width: 200px; cursor: default">{{preferenceBar}}</button>
   </div>
 
   <h3>Payback in:</h3>
@@ -13,8 +18,7 @@
   <div class="center">
     <card *ngFor="let pt of paymentTypes" title="{{pt.length}} months" [selected]="active == pt.id ? 'selected' : 'regular'">
       <p>Payment/Month: {{pt.payment | currency}}</p>
-      <p>Interest Rate: {{pt.rate}}%</p>
-      <p>APR: {{pt.apr}}%</p>
+      <p>Interest Rate: {{pt.rate | percent}}</p>
 
       <button (click)="select(pt.id)">Select this guy!!!</button>
     </card>
@@ -26,7 +30,7 @@
         <a class="button" routerLink="/sign-up-borrower">Previous</a>
       </td>
       <td style="text-align: right">
-        <a class="button" routerLink="/upload-documents">Next</a>
+        <a class="button" routerLink="/upload-documents" (click)="saveValues()">Next</a>
       </td>
     </tr>
   </table>
