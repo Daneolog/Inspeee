@@ -1,0 +1,24 @@
+a.bigButton {
+  display: inline-block;
+  cursor: default;
+  outline: 0;
+  background: #9f72e6;
+  border: 0;
+  border-radius: 2px;
+  padding: 15px 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+
+  &:hover {
+    background: #b290e7;
+    text-decoration: none;
+  }
+  &:active {
+    background: #7947c9;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background: #b598e4;
+  }
+}

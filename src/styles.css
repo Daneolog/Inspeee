@@ -81,7 +81,28 @@ button:disabled {
   cursor: not-allowed;
   background: #b598e4;
 }
-
+a.button {
+  display: inline-block;
+  cursor: default;
+  outline: 0;
+  background: #9f72e6;
+  border: 0;
+  border-radius: 2px;
+  padding: 7px 10px;
+  text-align: center;
+  color: #fff;
+}
+a.button:hover {
+  background: #b290e7;
+  text-decoration: none;
+}
+a.button:active {
+  background: #7947c9;
+}
+a.button:disabled {
+  cursor: not-allowed;
+  background: #b598e4;
+}
 b {
   font-weight: bold;
 }
@@ -117,7 +138,7 @@ div.overlay > * {
 
 .buttons {
   width: 100%;
-  margin-top: 10px;
+  margin: 5px 0 0 0 !important;
 }
 
 /* eye burning code plz delete */

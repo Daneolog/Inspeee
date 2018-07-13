@@ -7,8 +7,12 @@ import { RegisterComponent } from './register/register.component';
 import { WithdrawComponent } from './deposit-withdrawal/withdraw/withdraw.component';
 import { InvestmentConfirmationComponent } from './investment-confirmation/investment-confirmation.component';
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
+import { InvestComponent } from './invest/invest.component';
+import { ManualInvestmentComponent } from './manual-investment/manual-investment.component';
 
 const routes: Routes = [
+  { path: 'invest', component: InvestComponent },
+  { path: 'manual-investment', component: ManualInvestmentComponent },
   { path: 'sign-up-lender', component: RegisterComponent },
   {
     path: 'deposit-withdrawal',

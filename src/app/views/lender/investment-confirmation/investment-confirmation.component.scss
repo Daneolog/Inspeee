@@ -23,26 +23,3 @@ td.summary {
 .align-right {
   text-align: right;
 }
-
-a.button {
-  cursor: default;
-  outline: 0;
-  background: #9f72e6;
-  border: 0;
-  border-radius: 2px;
-  padding: 5px 10px;
-  text-align: center;
-  color: #fff;
-
-  &:hover {
-    background: #b290e7;
-    text-decoration: none;
-  }
-  &:active {
-    background: #7947c9;
-  }
-  &:disabled {
-    cursor: not-allowed;
-    background: #b598e4;
-  }
-}

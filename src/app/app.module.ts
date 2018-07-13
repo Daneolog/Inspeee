@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'borrow', redirectTo: 'check-rate' },
-  { path: 'lender', redirectTo: 'sign-up-lender' },
+  { path: 'lender', redirectTo: 'invest' },
   { path: '**', component: ErrorComponent }
 ];
 
