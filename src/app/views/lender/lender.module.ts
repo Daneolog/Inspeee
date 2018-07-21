@@ -12,6 +12,7 @@ import { InvestmentConfirmationComponent } from './investment-confirmation/inves
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 import { InvestComponent } from './invest/invest.component';
 import { ManualInvestmentComponent } from './manual-investment/manual-investment.component';
+import { ProperlyRunningComponent } from './portfolio-details/properly-running/properly-running.component';
 
 @NgModule({
   imports: [CommonModule, LenderRoutingModule, ComponentsModule],
@@ -24,7 +25,8 @@ import { ManualInvestmentComponent } from './manual-investment/manual-investment
     InvestmentConfirmationComponent,
     PortfolioDetailsComponent,
     InvestComponent,
-    ManualInvestmentComponent
+    ManualInvestmentComponent,
+    ProperlyRunningComponent
   ]
 })
 export class LenderModule {}

@@ -54,7 +54,8 @@ input[type='checkbox'] {
 }
 input[type='text'],
 input[type='email'],
-input[type='number'] {
+input[type='number'],
+input[type='password'] {
   border: none;
   background: #fff;
   font-size: 13px;

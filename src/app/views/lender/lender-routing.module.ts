@@ -9,6 +9,7 @@ import { InvestmentConfirmationComponent } from './investment-confirmation/inves
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 import { InvestComponent } from './invest/invest.component';
 import { ManualInvestmentComponent } from './manual-investment/manual-investment.component';
+import { ProperlyRunningComponent } from './portfolio-details/properly-running/properly-running.component';
 
 const routes: Routes = [
   { path: 'invest', component: InvestComponent },
@@ -30,7 +31,15 @@ const routes: Routes = [
   },
   {
     path: 'portfolio-details',
-    component: PortfolioDetailsComponent
+    component: PortfolioDetailsComponent,
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: 'properly-running' },
+      { path: 'properly-running', component: ProperlyRunningComponent },
+      { path: 'delayed', component: WithdrawComponent },
+      { path: 'non-performing', component: WithdrawComponent },
+      { path: 'finished', component: WithdrawComponent },
+      { path: '**', component: ErrorComponent }
+    ]
   }
 ];
 

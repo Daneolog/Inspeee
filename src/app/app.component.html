@@ -7,7 +7,12 @@
     </div>
 
     <div class="navRight">
-      <a routerLink="/login" routerLinkActive="active">Sign in</a>
+      <a *ngIf="!currentUser" routerLink="/login" routerLinkActive="active">Sign in</a>
+      <div *ngIf="currentUser">
+        <p>Hello, {{currentUser.Name}}</p>
+        <p>You are a {{currentUser.IsLender == 1 ? 'lender' : 'borrower'}}</p>
+        <a routerLink="/home" (click)="logout()">Log out</a>
+      </div>
     </div>
   </nav>
   <br>

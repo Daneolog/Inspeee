@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BorrowerService } from 'src/app/services/borrower.service';
+import { CacheService } from 'src/app/services/cache.service';
 
 @Component({
   selector: 'app-loan-offer',
@@ -14,7 +14,7 @@ export class LoanOfferComponent implements OnInit {
   ];
   active = 0;
 
-  constructor(private borrowerService: BorrowerService) {}
+  constructor(private cacheService: CacheService) {}
 
   ngOnInit() {
     this.updateValues(this.preferenceBar);
@@ -38,6 +38,6 @@ export class LoanOfferComponent implements OnInit {
       pt => pt.id === this.active
     )[0];
 
-    this.borrowerService.modifyStorage('loanOffer', paymentType);
+    this.cacheService.modifyStorage('loanOffer', paymentType);
   }
 }

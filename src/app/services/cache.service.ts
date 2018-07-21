@@ -1,9 +1,11 @@
 import { Injectable, Inject } from '@angular/core';
-import { LOCAL_STORAGE, StorageService } from 'angular-webstorage-service';
+import { SESSION_STORAGE, StorageService } from 'angular-webstorage-service';
 
-@Injectable()
-export class BorrowerService {
-  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) {}
+@Injectable({
+  providedIn: 'root'
+})
+export class CacheService {
+  constructor(@Inject(SESSION_STORAGE) private storage: StorageService) {}
 
   public modifyStorage(key: string, data: any): any[] {
     this.storage.set(key, [data]);
@@ -17,5 +19,9 @@ export class BorrowerService {
 
   public getStorage(key: string): any[] {
     return this.storage.get(key);
+  }
+
+  public deleteStorage(key: string) {
+    this.storage.remove(key);
   }
 }

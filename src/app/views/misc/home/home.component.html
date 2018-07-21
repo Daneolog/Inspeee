@@ -5,9 +5,8 @@
   </div>
 
   <div class="overlay">
-    <h3>Are you a:</h3>
-    <a class="button" routerLink="/borrow">Borrower</a>
-    <h3>or</h3>
-    <a class="button" routerLink="/lender">Lender</a>
+    <a *ngIf="!currentUser || currentUser.IsLender == '0'" class="button" routerLink="/borrow">Borrower</a>
+    <br>
+    <a *ngIf="!currentUser || currentUser.IsLender == '1'" class="button" routerLink="/lender">Lender</a>
   </div>
 </div>

@@ -6,7 +6,7 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 import { DateFieldComponent } from 'src/app/components/date-field/date-field.component';
-import { BorrowerService } from 'src/app/services/borrower.service';
+import { CacheService } from 'src/app/services/cache.service';
 
 @Component({
   selector: 'app-check-rate',
@@ -21,12 +21,12 @@ export class CheckRateComponent implements AfterViewInit {
   @ViewChild('annualIncome') annualIncome: ElementRef;
 
   constructor(
-    private borrowerService: BorrowerService,
+    private cacheService: CacheService,
     private cdRef: ChangeDetectorRef
   ) {}
 
   ngAfterViewInit(): void {
-    const temp = this.borrowerService.getStorage('userInfo');
+    const temp = this.cacheService.getStorage('userInfo');
     const userInfo = temp ? temp[0] : {};
 
     this.firstName.nativeElement.value = userInfo.firstName;
@@ -39,7 +39,7 @@ export class CheckRateComponent implements AfterViewInit {
   }
 
   submit() {
-    this.borrowerService.modifyUserInfo({
+    this.cacheService.modifyUserInfo({
       firstName: this.firstName.nativeElement.value,
       lastName: this.lastName.nativeElement.value,
       dob: this.dateOfBirth.date,

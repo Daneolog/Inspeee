@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BorrowerRoutingModule } from './borrower-routing.module';
 import { ComponentsModule } from '../../components/components.module';
 
@@ -11,13 +12,13 @@ import { LoanOfferComponent } from './loan-offer/loan-offer.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { PaybackScheduleComponent } from './payback-schedule/payback-schedule.component';
 import { AgreementLetterComponent } from './agreement-letter/agreement-letter.component';
-import { BorrowerService } from '../../services/borrower.service';
 import { StorageServiceModule } from 'angular-webstorage-service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
     StorageServiceModule,
     ComponentsModule,
     BorrowerRoutingModule
@@ -30,7 +31,6 @@ import { StorageServiceModule } from 'angular-webstorage-service';
     UploadDocumentsComponent,
     PaybackScheduleComponent,
     AgreementLetterComponent
-  ],
-  providers: [BorrowerService]
+  ]
 })
 export class BorrowerModule {}

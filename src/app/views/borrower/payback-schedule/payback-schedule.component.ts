@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BorrowerService } from 'src/app/services/borrower.service';
+import { CacheService } from 'src/app/services/cache.service';
 
 @Component({
   selector: 'app-payback-schedule',
@@ -17,10 +17,10 @@ export class PaybackScheduleComponent implements OnInit {
   remainingMonths = 0;
   monthlyPayment = 0;
 
-  constructor(private borrowerService: BorrowerService) {}
+  constructor(private cacheService: CacheService) {}
 
   ngOnInit() {
-    this.loanDetails = this.borrowerService.getStorage('loanOffer')[0];
+    this.loanDetails = this.cacheService.getStorage('loanOffer')[0];
     this.updateValues();
   }
 
