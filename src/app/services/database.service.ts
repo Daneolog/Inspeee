@@ -12,7 +12,7 @@ export class DatabaseService {
   constructor(private http: HttpClient) {}
 
   public runQuery(query: string): Observable<any> {
-    return this.http.post('http://inspeee.altervista.org/query_handler.php', {
+    return this.http.post('https://inspeee.altervista.org/query_handler.php', {
       username: USERNAME,
       password: PASSWORD,
       query: query
