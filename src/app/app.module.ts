@@ -9,13 +9,14 @@ import { ErrorComponent } from './views/misc/error/error.component';
 import { BorrowerModule } from './views/borrower/borrower.module';
 import { LenderModule } from './views/lender/lender.module';
 import { LoginComponent } from './views/misc/login/login.component';
+import { DashboardComponent } from './views/borrower/logged-in/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'borrow', redirectTo: 'check-rate' },
-  { path: 'lender', redirectTo: 'invest' },
+  { path: 'borrower', component: DashboardComponent },
+  { path: 'lender', component: DashboardComponent },
   { path: '**', component: ErrorComponent }
 ];
 
@@ -23,7 +24,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { useHash: true }),
     BorrowerModule,
     LenderModule
   ],

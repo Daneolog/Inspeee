@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CacheService } from 'src/app/services/cache.service';
-import { DatabaseService } from 'src/app/services/database.service';
+import { CacheService } from '../../../services/cache.service';
+import { DatabaseService } from '../../../services/database.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private databaseService: DatabaseService,
-    private cacheService: CacheService
+    private cacheService: CacheService,
+    private router: Router
   ) {}
 
   ngOnInit() {}
@@ -30,13 +32,18 @@ export class LoginComponent implements OnInit {
          WHERE Email LIKE '${this.username}' AND Password = '${this.password}'`
       )
       .subscribe(data => {
-        console.log(data);
-        if (data === null) {
-          console.log('wrong username/password');
-        } else {
+        if (data && data.length) {
+          let user = data[0];
+
+          if (user.IsLender == 0) {
+            this.router.navigate(['/borrower']);
+          } else {
+            this.router.navigate(['/lender']);
+          }
           this.cacheService.modifyUserInfo(data[0]);
+        } else {
+          console.log('bad user');
         }
-        window.location.reload();
       });
   }
 }

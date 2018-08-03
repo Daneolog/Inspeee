@@ -5,8 +5,8 @@ import {
   AfterViewInit,
   ChangeDetectorRef
 } from '@angular/core';
-import { DateFieldComponent } from 'src/app/components/date-field/date-field.component';
-import { CacheService } from 'src/app/services/cache.service';
+import { DateFieldComponent } from '../../../../components/date-field/date-field.component';
+import { CacheService } from '../../../../services/cache.service';
 
 @Component({
   selector: 'app-check-rate',

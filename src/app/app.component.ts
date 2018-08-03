@@ -19,10 +19,19 @@ export class AppComponent implements OnInit {
     } else {
       this.currentUser = user[0];
     }
+
+    this.cacheService.storageChanged.subscribe(item => {
+      const user = this.cacheService.getStorage('userInfo');
+
+      if (user == null) {
+        this.currentUser = null;
+      } else {
+        this.currentUser = user[0];
+      }
+    });
   }
 
   logout() {
     this.cacheService.deleteStorage('userInfo');
-    window.location.reload();
   }
 }
