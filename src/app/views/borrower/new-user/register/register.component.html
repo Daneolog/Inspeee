@@ -2,19 +2,25 @@
   <h2 style="text-align: center">Create An Account</h2>
 
   <div class="form-group">First name:
-    <input type="text" #firstName>
+    <input type="text" [(ngModel)]="firstName">
   </div>
   <div class="form-group">Last name:
-    <input type="text" #lastName>
+    <input type="text" [(ngModel)]="lastName">
   </div>
   <div class="form-group">Date of Birth:
     <app-date-field #dob style="width: 100%"></app-date-field>
   </div>
   <div class="form-group">Home Address
-    <input type="text" #homeAddress>
+    <input type="text" [(ngModel)]="homeAddress">
+  </div>
+  <div class="form-group">Phone Number
+      <input type="text" [(ngModel)]="phoneNumber">
   </div>
   <div class="form-group">Annual Income: $
-    <input type="number" #annualIncome>
+    <input type="number" [(ngModel)]="annualIncome">
+  </div>
+  <div class="form-group">Occupation
+      <input type="text" [(ngModel)]="occupation">
   </div>
   <div class="form-group">Email:
     <input type="email" placeholder="email" [(ngModel)]="email">
@@ -29,7 +35,7 @@
         <a class="button" routerLink="/home">Previous</a>
       </td>
       <td style="text-align: right">
-        <a class="button" routerLink="/bank-details">Next</a>
+        <button (click)="register()">Register Account</button>
       </td>
     </tr>
   </table>
