@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { DatabaseService } from '../../../../services/database.service';
+import { DateFieldComponent } from '../../../../components/date-field/date-field.component';
 
 @Component({
   selector: 'app-sign-up-lender',
@@ -9,6 +10,11 @@ import { DatabaseService } from '../../../../services/database.service';
   templateUrl: 'register.component.html'
 })
 export class RegisterComponent {
+  firstName: string;
+  lastName: string;
+  @ViewChild("dob") dob: DateFieldComponent;
+  homeAddress: string;
+  phoneNumber: string;
   email: string;
   password: string;
 
