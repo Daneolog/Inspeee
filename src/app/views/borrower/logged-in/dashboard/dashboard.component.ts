@@ -22,19 +22,26 @@ export class DashboardComponent implements OnInit {
   monthlyPayment;
 
   constructor(
+    private cacheService: CacheService,
     private databaseService: DatabaseService,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.databaseService
-      .runQuery('SELECT * FROM Loan WHERE BorrowerID = 1')
-      .subscribe(data => {
-        if (data) {
-          this.currentLoan = data[0];
-          this.updateValues();
-        }
-      });
+    const storage = this.cacheService.getStorage('userInfo');
+    const userInfo = storage ? storage[0] : null;
+    console.log(userInfo);
+
+    if (userInfo) {
+      this.databaseService
+        .runQuery(`SELECT * FROM Loan WHERE BorrowerID = ${userInfo.UserID}`)
+        .subscribe(data => {
+          if (data) {
+            this.currentLoan = data[0];
+            this.updateValues();
+          }
+        });
+    }
   }
 
   updateValues() {

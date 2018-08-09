@@ -23,5 +23,5 @@
     </div>
   </div>
 
-  <button (click)="router.navigate(['/loan-offer'])" [disabled]="currentLoan">Add a loan</button>
+  <button (click)="router.navigate(['/loan-offer'])" [disabled]="!userInfo || currentLoan">Add a loan</button>
 </div>
