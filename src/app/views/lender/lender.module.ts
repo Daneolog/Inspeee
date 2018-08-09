@@ -1,32 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LenderRoutingModule } from './lender-routing.module';
-import { ComponentsModule } from '../../components/components.module';
-
-import { DepositWithdrawalComponent } from './deposit-withdrawal/deposit-withdrawal.component';
-import { DepositComponent } from './deposit-withdrawal/deposit/deposit.component';
-import { ErrorComponent } from './deposit-withdrawal/error/error.component';
-import { RegisterComponent } from './register/register.component';
-import { WithdrawComponent } from './deposit-withdrawal/withdraw/withdraw.component';
-import { InvestmentConfirmationComponent } from './investment-confirmation/investment-confirmation.component';
-import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
-import { InvestComponent } from './invest/invest.component';
-import { ManualInvestmentComponent } from './manual-investment/manual-investment.component';
-import { ProperlyRunningComponent } from './portfolio-details/properly-running/properly-running.component';
+import { LoggedInModule } from './logged-in/logged-in.module';
+import { NewUserModule } from './new-user/new-user.module';
 
 @NgModule({
-  imports: [CommonModule, LenderRoutingModule, ComponentsModule],
-  declarations: [
-    DepositWithdrawalComponent,
-    DepositComponent,
-    ErrorComponent,
-    RegisterComponent,
-    WithdrawComponent,
-    InvestmentConfirmationComponent,
-    PortfolioDetailsComponent,
-    InvestComponent,
-    ManualInvestmentComponent,
-    ProperlyRunningComponent
-  ]
+  imports: [CommonModule, LoggedInModule, NewUserModule],
+  declarations: []
 })
 export class LenderModule {}

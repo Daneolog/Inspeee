@@ -5,8 +5,8 @@
   </div>
 
   <div class="overlay">
-    <a *ngIf="!currentUser || currentUser.IsLender == '0'" class="button" routerLink="/check-rate">Borrower</a>
+    <a class="button" routerLink="/register-borrower">Borrower</a>
     <br>
-    <a *ngIf="!currentUser || currentUser.IsLender == '1'" class="button" routerLink="/lender">Lender</a>
+    <a class="button" routerLink="/register-lender">Lender</a>
   </div>
 </div>

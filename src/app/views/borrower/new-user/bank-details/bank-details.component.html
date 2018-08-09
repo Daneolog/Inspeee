@@ -1,26 +1,29 @@
 <div class="overlay">
   <h2 style="text-align: center">Bank Account Details</h2>
 
-  <form>
-    Bank name:
+  <div class="form-group">Bank name:
     <input type="text" name="bankName">
-    <br> Branch Office:
+  </div>
+  <div class="form-group">Branch Office:
     <input type="text" name="branchOffice">
-    <br> Account Type:
+  </div>
+  <div class="form-group">Account Type:
     <input type="text" name="accountType">
-    <br> Account Number:
+  </div>
+  <div class="form-group">Account Number:
     <input type="text" name="accountNumber">
-    <br> Name of Account Holder:
+  </div>
+  <div class="form-group">Name of Account Holder:
     <input type="text" name="nameOfAccountHolder">
-    <br>
-  </form>
+  </div>
+
   <table class="buttons">
     <tr>
       <td>
-        <a class="button" routerLink="/agreement-letter">Previous</a>
+        <a class="button" routerLink="/register-borrower">Previous</a>
       </td>
       <td style="text-align: right">
-        <button (click)="saveLoan()">Submit</button>
+        <a class="button" routerLink="/upload-documents">Next</a>
       </td>
     </tr>
   </table>

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { DatabaseService } from '../../../../services/database.service';
 
 @Component({
-  selector: 'app-register-borrower',
+  selector: 'app-sign-up-lender',
   styleUrls: ['register.component.scss'],
   templateUrl: 'register.component.html'
 })
@@ -19,7 +19,8 @@ export class RegisterComponent {
 
   register() {
     this.databaseService.runQuery(``).subscribe(data => {
-      // this.router.navigate(['/deposit-withdrawal']);
+      console.log('query runs');
+      this.router.navigate(['/deposit-withdrawal']);
     });
   }
 }

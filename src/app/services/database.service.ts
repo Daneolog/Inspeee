@@ -18,4 +18,16 @@ export class DatabaseService {
       query: query
     });
   }
+
+  public findUser(username: string, password: string): Observable<any> {
+    return this.runQuery(
+      `SELECT UserID, Name, Email, IsLender
+       FROM (
+         SELECT BorrowerID AS UserID, CONCAT(FirstName, ' ', LastName) AS Name, Email, Password, 0 AS IsLender FROM Borrower
+         UNION
+         SELECT LenderID AS UserID, CONCAT(FirstName, ' ', LastName) AS Name, Email, Password, 1 AS IsLender FROM Lender
+       ) AS temp
+       WHERE Email LIKE '${username}' AND Password = '${password}'`
+    );
+  }
 }

@@ -1,21 +1,35 @@
 <div class="overlay">
   <h2 style="text-align: center">Create An Account</h2>
-  <form>
-    Email:
-    <input type="email" name="email" placeholder="you@email.com">
-    <br> Password:
-    <input type="password" name="password">
-    <br>
-    <input type="checkbox">I have read and agreed to stuff.
-    <br>
-  </form>
+
+  <div class="form-group">First name:
+    <input type="text" #firstName>
+  </div>
+  <div class="form-group">Last name:
+    <input type="text" #lastName>
+  </div>
+  <div class="form-group">Date of Birth:
+    <app-date-field #dob style="width: 100%"></app-date-field>
+  </div>
+  <div class="form-group">Home Address
+    <input type="text" #homeAddress>
+  </div>
+  <div class="form-group">Annual Income: $
+    <input type="number" #annualIncome>
+  </div>
+  <div class="form-group">Email:
+    <input type="email" placeholder="email" [(ngModel)]="email">
+  </div>
+  <div class="form-group">Password:
+    <input type="password" placeholder="password" [(ngModel)]="password">
+  </div>
+
   <table class="buttons">
     <tr>
       <td>
-        <a class="button" routerLink="/check-rate">Previous</a>
+        <a class="button" routerLink="/home">Previous</a>
       </td>
       <td style="text-align: right">
-        <a class="button" routerLink="/loan-offer">Calculate Your Rate</a>
+        <a class="button" routerLink="/bank-details">Next</a>
       </td>
     </tr>
   </table>

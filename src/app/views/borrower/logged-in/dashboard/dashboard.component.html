@@ -1,3 +1,27 @@
 <div class="overlay">
   <h1>HELLO, {{firstName}}</h1>
+
+  <div *ngIf="currentLoan">
+    <card title="Loan Terms">
+      <p>Total loan amount: {{totalLoanAmount | currency}}</p>
+      <p>Interest amount: {{interestAmount | currency}}</p>
+    </card>
+
+    <card title="Paid Off Loan">
+      <p>Total paid so far: {{paidLoanAmount | currency}}</p>
+      <p>Payment made: {{months}} {{months == 1 ? 'month' : 'months'}}</p>
+    </card>
+
+    <card title="To Be Paid">
+      <p>Left to be paid: {{remainingLoanAmount | currency}}</p>
+      <p>Months left: {{remainingMonths}} {{remainingMonths == 1 ? 'month' : 'months'}}</p>
+      <p>Monthly payment: {{monthlyPayment | currency}}</p>
+    </card>
+    <div class="form-group">
+      Simulate your loan after
+      <input type="number" [(ngModel)]="months" (input)="updateValues()" style="width: 55px"> elapsed months
+    </div>
+  </div>
+
+  <button (click)="router.navigate(['/loan-offer'])" [disabled]="currentLoan">Add a loan</button>
 </div>

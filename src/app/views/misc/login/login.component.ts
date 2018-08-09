@@ -22,15 +22,7 @@ export class LoginComponent implements OnInit {
 
   signIn() {
     this.databaseService
-      .runQuery(
-        `SELECT UserID, Name, Email, IsLender
-         FROM (
-           SELECT BorrowerID AS UserID, CONCAT(FirstName, ' ', LastName) AS Name, Email, Password, 0 AS IsLender FROM Borrower
-           UNION
-           SELECT LenderID AS UserID, CONCAT(FirstName, ' ', LastName) AS Name, Email, Password, 1 AS IsLender FROM Lender
-         ) AS temp
-         WHERE Email LIKE '${this.username}' AND Password = '${this.password}'`
-      )
+      .findUser(this.username, this.password)
       .subscribe(data => {
         if (data && data.length) {
           let user = data[0];
@@ -40,7 +32,7 @@ export class LoginComponent implements OnInit {
           } else {
             this.router.navigate(['/lender']);
           }
-          this.cacheService.modifyUserInfo(data[0]);
+          this.cacheService.modifyUserInfo(user);
         } else {
           console.log('bad user');
         }
