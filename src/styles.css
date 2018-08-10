@@ -20,7 +20,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: #ff9494;
   -webkit-font-smoothing: antialiased;
   color: #545e6f;
 }
@@ -55,7 +55,8 @@ input[type='checkbox'] {
 input[type='text'],
 input[type='email'],
 input[type='number'],
-input[type='password'] {
+input[type='password'],
+input[type='date'] {
   border: none;
   background: #fff;
   font-size: 13px;

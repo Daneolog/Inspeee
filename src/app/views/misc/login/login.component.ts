@@ -27,6 +27,8 @@ export class LoginComponent implements OnInit {
         if (data && data.length) {
           let user = data[0];
 
+          console.log(user);
+
           if (user.IsLender == 0) {
             this.router.navigate(['/borrower']);
           } else {
