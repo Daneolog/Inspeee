@@ -10,6 +10,7 @@ import { DatabaseService } from 'src/app/services/database.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  userInfo: any;
   currentLoan: any;
 
   months = 1;
@@ -29,12 +30,13 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     const storage = this.cacheService.getStorage('userInfo');
-    const userInfo = storage ? storage[0] : null;
-    console.log(userInfo);
+    this.userInfo = storage ? storage[0] : null;
 
-    if (userInfo) {
+    if (this.userInfo) {
       this.databaseService
-        .runQuery(`SELECT * FROM Loan WHERE BorrowerID = ${userInfo.UserID}`)
+        .runQuery(
+          `SELECT * FROM Loan WHERE BorrowerID = ${this.userInfo.UserID}`
+        )
         .subscribe(data => {
           if (data) {
             this.currentLoan = data[0];
@@ -45,8 +47,6 @@ export class DashboardComponent implements OnInit {
   }
 
   updateValues() {
-    console.log(this.currentLoan);
-
     const months =
       this.months > this.currentLoan.Duration
         ? this.currentLoan.Duration

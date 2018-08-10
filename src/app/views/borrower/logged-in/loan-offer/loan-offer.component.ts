@@ -42,7 +42,7 @@ export class LoanOfferComponent implements OnInit {
   saveLoan() {
     const loanData = this.paymentTypes.filter(pt => pt.id === this.active)[0];
 
-    let borrowerID = 1;
+    let borrowerID = this.cacheService.getStorage('userInfo')[0].UserID;
     let loanAmount = loanData.amount;
     let duration = loanData.length;
     let interestRate = 4;
