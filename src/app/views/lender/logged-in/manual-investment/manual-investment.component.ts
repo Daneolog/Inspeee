@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from '../../../../services/database.service';
 
 @Component({
   selector: 'app-manual-investment',
@@ -6,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manual-investment.component.scss']
 })
 export class ManualInvestmentComponent implements OnInit {
-  constructor() {}
+  loans: any[];
 
-  ngOnInit() {}
+  constructor(private databaseService: DatabaseService) {}
+
+  ngOnInit() {
+    this.databaseService
+      .runQuery(
+        'SELECT LoanID, LoanAmount, Duration, InterestRate, Grade, AmountFunded, MaturityDate FROM Loan WHERE AmountFunded < LoanAmount'
+      )
+      .subscribe(data => (this.loans = data));
+  }
 }

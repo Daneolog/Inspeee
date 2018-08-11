@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { CacheService } from 'src/app/services/cache.service';
 import { DatabaseService } from 'src/app/services/database.service';
+import { UserInfo } from '../../../../models/user.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,7 @@ import { DatabaseService } from 'src/app/services/database.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  userInfo: any;
+  userInfo: UserInfo;
   currentLoan: any;
 
   months = 1;
@@ -29,21 +30,16 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const storage = this.cacheService.getStorage('userInfo');
-    this.userInfo = storage ? storage[0] : null;
+    this.userInfo = this.cacheService.getStorage('userInfo')[0];
 
-    if (this.userInfo) {
-      this.databaseService
-        .runQuery(
-          `SELECT * FROM Loan WHERE BorrowerID = ${this.userInfo.UserID}`
-        )
-        .subscribe(data => {
-          if (data) {
-            this.currentLoan = data[0];
-            this.updateValues();
-          }
-        });
-    }
+    this.databaseService
+      .runQuery(`SELECT * FROM Loan WHERE BorrowerID = ${this.userInfo.UserID}`)
+      .subscribe(data => {
+        if (data) {
+          this.currentLoan = data[0];
+          this.updateValues();
+        }
+      });
   }
 
   updateValues() {

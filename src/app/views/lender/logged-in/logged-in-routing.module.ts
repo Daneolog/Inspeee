@@ -7,6 +7,7 @@ import { DepositComponent } from './deposit-withdrawal/deposit/deposit.component
 import { WithdrawComponent } from './deposit-withdrawal/withdraw/withdraw.component';
 import { ErrorComponent } from './deposit-withdrawal/error/error.component';
 import { ManualInvestmentComponent } from './manual-investment/manual-investment.component';
+import { InvestLoanComponent } from './invest-loan/invest-loan.component';
 
 const routes: Routes = [
   { path: 'lender-dashboard', component: DashboardComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     ]
   },
   { path: 'manual-investment', component: ManualInvestmentComponent }
+  { path: 'manual-investment/:id', component: InvestLoanComponent }
 ];
 
 @NgModule({

@@ -1,13 +1,27 @@
 <div class="overlay">
   <h2 style="text-align: center">Manual Investment</h2>
-  <table class="buttons">
+
+  <table>
     <tr>
+      <th>Rate</th>
+      <th>Duration</th>
+      <th>Amount</th>
+      <th>% Funded</th>
+      <th>End Date</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let loan of loans">
+      <td>{{loan.InterestRate}}%</td>
+      <td>{{loan.Duration}}</td>
+      <td>{{loan.LoanAmount}}</td>
+      <td>{{loan.AmountFunded / loan.LoanAmount}}</td>
+      <td>{{loan.MaturityDate}}</td>
       <td>
-        <a class="button" routerLink="/invest">Previous</a>
+        <a class="button" [routerLink]="loan.LoanID">&gt;</a>
       </td>
-      <td style="text-align: right">
-        <a class="button" routerLink="/sign-up-lender">Next</a>
-      </td>
+
     </tr>
   </table>
+
+  <a class="button" routerLink="/invest">Previous</a>
 </div>

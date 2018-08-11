@@ -9,14 +9,15 @@ import { ErrorComponent } from './views/misc/error/error.component';
 import { BorrowerModule } from './views/borrower/borrower.module';
 import { LenderModule } from './views/lender/lender.module';
 import { LoginComponent } from './views/misc/login/login.component';
-import { DashboardComponent } from './views/borrower/logged-in/dashboard/dashboard.component';
+import { DashboardComponent as BorrowerDashboardComponent } from './views/borrower/logged-in/dashboard/dashboard.component';
+import { DashboardComponent as LenderDashboardComponent } from './views/lender/logged-in/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'borrower', component: DashboardComponent },
-  { path: 'lender', component: DashboardComponent },
+  { path: 'borrower', component: BorrowerDashboardComponent },
+  { path: 'lender', component: LenderDashboardComponent },
   { path: '**', component: ErrorComponent }
 ];
 

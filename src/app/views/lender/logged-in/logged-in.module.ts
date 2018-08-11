@@ -9,6 +9,7 @@ import { ErrorComponent } from './deposit-withdrawal/error/error.component';
 import { WithdrawComponent } from './deposit-withdrawal/withdraw/withdraw.component';
 import { InvestComponent } from './invest/invest.component';
 import { ManualInvestmentComponent } from './manual-investment/manual-investment.component';
+import { InvestLoanComponent } from './invest-loan/invest-loan.component';
 
 @NgModule({
   imports: [CommonModule, LoggedInRoutingModule],
@@ -19,7 +20,8 @@ import { ManualInvestmentComponent } from './manual-investment/manual-investment
     ErrorComponent,
     WithdrawComponent,
     InvestComponent,
-    ManualInvestmentComponent
+    ManualInvestmentComponent,
+    InvestLoanComponent
   ]
 })
 export class LoggedInModule {}

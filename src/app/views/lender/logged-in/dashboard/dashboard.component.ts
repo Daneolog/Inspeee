@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CacheService } from '../../../../services/cache.service';
+import { UserInfo } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
+  userInfo: UserInfo;
 
-  ngOnInit() {}
+  constructor(private cacheService: CacheService) {}
+
+  ngOnInit() {
+    this.userInfo = this.cacheService.getStorage('userInfo')[0];
+  }
 }

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SQLGenerator {
-  // 2 - 10
   private static int randomInt(int start, int end) {
+    end++;
     return (int)(Math.random() * (end - start) + start);
   }
 

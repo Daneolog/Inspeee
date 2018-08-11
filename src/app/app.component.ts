@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CacheService } from './services/cache.service';
+import { UserInfo } from './models/user.model';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { CacheService } from './services/cache.service';
   templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
-  currentUser: any;
+  currentUser: UserInfo;
 
   constructor(private cacheService: CacheService) {}
 
