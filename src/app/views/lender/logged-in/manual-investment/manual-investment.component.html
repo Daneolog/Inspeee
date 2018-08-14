@@ -15,7 +15,7 @@
       <td>{{loan.InterestRate}}%</td>
       <td>{{loan.Duration}}</td>
       <td>{{loan.LoanAmount}}</td>
-      <td>{{loan.AmountFunded / loan.LoanAmount}}</td>
+      <td>{{round(loan.AmountFunded / loan.LoanAmount)}}</td>
       <td>{{loan.LoanAmount - loan.AmountFunded}}</td>
       <td>{{loan.MaturityDate}}</td>
       <td>

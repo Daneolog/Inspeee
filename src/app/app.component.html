@@ -12,6 +12,8 @@
         <p>Hello, {{currentUser.Name}}</p>
         <p>You are a {{currentUser.IsLender == 1 ? 'lender' : 'borrower'}}</p>
         <a routerLink="/home" (click)="logout()">Log out</a>
+        &bull;
+        <a [routerLink]="currentUser.IsLender == 1 ? 'lender-dashboard' : 'borrower-dashboard'">Dashboard</a>
       </div>
     </div>
   </nav>

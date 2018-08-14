@@ -54,10 +54,13 @@ export class LoanOfferComponent implements OnInit {
     let startDate = new Date();
     let endDate = new Date();
     endDate.setMonth(endDate.getMonth() + loanData.length);
-    let query = `INSERT INTO \`my_inspeee\`.\`Loan\` (\`LoanID\`, \`BorrowerID\`, \`LoanAmount\`, \`Duration\`, \`InterestRate\`, \`Grade\`, \`AmountFunded\`, \`ExpectedReturn\`, \`Status\`, \`AmountPaid\`, \`StartDate\`, \`MaturityDate\`) VALUES (NULL, '${borrowerID}', '${loanAmount}', '${duration}', '${interestRate}', '${grade}', '${amountFunded}', '${expectedReturn}', '${status}', '${amountPaid}', '${this.format(
-      startDate
-    )}', '${this.format(endDate)}');`;
-    this.databaseService.runQuery(query).subscribe(data => console.log(data));
+    this.databaseService
+      .runQuery(
+        `INSERT INTO Loan (LoanID, BorrowerID, LoanAmount, Duration, InterestRate, Grade, AmountFunded, ExpectedReturn, Status, AmountPaid, StartDate, MaturityDate) VALUES (NULL, '${borrowerID}', '${loanAmount}', '${duration}', '${interestRate}', '${grade}', '${amountFunded}', '${expectedReturn}', '${status}', '${amountPaid}', '${this.format(
+          startDate
+        )}', '${this.format(endDate)}');`
+      )
+      .subscribe(data => console.log(data));
   }
 
   format(date: Date): string {

@@ -18,4 +18,8 @@ export class ManualInvestmentComponent implements OnInit {
       )
       .subscribe(data => (this.loans = data));
   }
+
+  round(num) {
+    return Math.round(num * 100);
+  }
 }

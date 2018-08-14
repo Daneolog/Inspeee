@@ -29,15 +29,16 @@ export class RegisterComponent {
   ) {}
 
   register() {
-    let query = `INSERT INTO \`my_inspeee\`.\`Borrower\` (\`BorrowerID\`, \`LastName\`, \`FirstName\`, \`DOB\`, \`AnnualIncome\`, \`HomeAddress\`, \`Phone\`, \`Email\`, \`Password\`, \`Occupation\`) VALUES (NULL, '${
-      this.lastName
-    }', '${this.firstName}', '${this.format(this.dob)}', '${
-      this.annualIncome
-    }', '${this.homeAddress}', '${this.phoneNumber}', '${this.email}', '${
-      this.password
-    }', '${this.occupation}');`;
     this.databaseService
-      .runQuery(query)
+      .runQuery(
+        `INSERT INTO Borrower (BorrowerID, LastName, FirstName, DOB, AnnualIncome, HomeAddress, Phone, Email, Password, Occupation) VALUES (NULL, '${
+          this.lastName
+        }', '${this.firstName}', '${this.format(this.dob)}', '${
+          this.annualIncome
+        }', '${this.homeAddress}', '${this.phoneNumber}', '${this.email}', '${
+          this.password
+        }', '${this.occupation}');`
+      )
       .pipe(
         switchMap(() =>
           this.databaseService.findUser(this.email, this.password)
