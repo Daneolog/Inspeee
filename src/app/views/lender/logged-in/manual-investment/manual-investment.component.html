@@ -7,6 +7,7 @@
       <th>Duration</th>
       <th>Amount</th>
       <th>% Funded</th>
+      <th>Left to be Funded</th>
       <th>End Date</th>
       <th></th>
     </tr>
@@ -15,6 +16,7 @@
       <td>{{loan.Duration}}</td>
       <td>{{loan.LoanAmount}}</td>
       <td>{{loan.AmountFunded / loan.LoanAmount}}</td>
+      <td>{{loan.LoanAmount - loan.AmountFunded}}</td>
       <td>{{loan.MaturityDate}}</td>
       <td>
         <a class="button" [routerLink]="loan.LoanID">&gt;</a>

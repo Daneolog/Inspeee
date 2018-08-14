@@ -33,6 +33,7 @@ export class RegisterComponent {
     }', '${this.firstName}', '${this.format(this.dob)}', '${
       this.homeAddress
     }', '${this.phoneNumber}', '${this.email}', '${this.password}');`;
+    let query2 = `INSERT INTO \`my_inspeee\`.\`LenderBalance\` (\`LenderID\`, \`Balance\`) VALUES (NULL, '0');`;
     this.databaseService
       .runQuery(query)
       .pipe(
@@ -43,6 +44,10 @@ export class RegisterComponent {
       .subscribe(data => {
         this.cacheService.modifyUserInfo(data[0]);
         this.router.navigate(['/lender-dashboard']);
+      });
+      this.databaseService
+      .runQuery(query2)
+      .subscribe(data => {
       });
   }
 

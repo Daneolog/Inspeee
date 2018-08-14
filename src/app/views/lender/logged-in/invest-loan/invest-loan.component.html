@@ -3,8 +3,8 @@
 
   <div class="form-group">
     <p>You're viewing loan #{{id}}</p>
-    <input type="number">&nbsp;&nbsp;
-    <button>Contribute</button>
+    <input type="number" [(ngModel)]="loanAmount">&nbsp;&nbsp;
+    <button (click)="contribute()">Contribute</button>
   </div>
 
   <a class="button" routerLink="/manual-investment">Previous</a>

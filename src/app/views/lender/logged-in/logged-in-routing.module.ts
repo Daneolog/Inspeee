@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: '**', component: ErrorComponent }
     ]
   },
-  { path: 'manual-investment', component: ManualInvestmentComponent }
+  { path: 'manual-investment', component: ManualInvestmentComponent },
   { path: 'manual-investment/:id', component: InvestLoanComponent }
 ];
 

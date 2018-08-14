@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { LoggedInRoutingModule } from './logged-in-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,7 +13,7 @@ import { ManualInvestmentComponent } from './manual-investment/manual-investment
 import { InvestLoanComponent } from './invest-loan/invest-loan.component';
 
 @NgModule({
-  imports: [CommonModule, LoggedInRoutingModule],
+  imports: [CommonModule, FormsModule, LoggedInRoutingModule],
   declarations: [
     DashboardComponent,
     DepositWithdrawalComponent,
