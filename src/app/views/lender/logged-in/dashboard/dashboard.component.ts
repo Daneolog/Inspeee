@@ -11,7 +11,8 @@ import { DatabaseService } from 'src/app/services/database.service';
 export class DashboardComponent implements OnInit {
   userInfo: UserInfo;
 
-  accountValue: number;
+  balance: number;
+  investedAmount: number;
 
   constructor(
     private cacheService: CacheService,
@@ -22,10 +23,13 @@ export class DashboardComponent implements OnInit {
     this.userInfo = this.cacheService.getStorage('userInfo')[0];
     this.databaseService
       .runQuery(
-        `SELECT InvestmentVehicle.LenderID, SUM(AmountInvested) + Balance AS AccountValue FROM InvestmentVehicle JOIN LenderBalance ON InvestmentVehicle.LenderID = LenderBalance.LenderID WHERE InvestmentVehicle.LenderID = ${
+        `SELECT InvestmentVehicle.LenderID, SUM(AmountInvested) AS InvestmentVehicles, Balance FROM InvestmentVehicle JOIN LenderBalance ON InvestmentVehicle.LenderID = LenderBalance.LenderID WHERE InvestmentVehicle.LenderID = ${
           this.userInfo.UserID
         }`
       )
-      .subscribe(data => (this.accountValue = data[0].AccountValue));
+      .subscribe(data => {
+        this.balance = data[0].Balance;
+        this.investedAmount = data[0].InvestmentVehicles;
+      });
   }
 }
