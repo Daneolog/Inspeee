@@ -1,3 +1,39 @@
 button {
   display: block;
 }
+
+.popup-background {
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  transition: 2s;
+
+  &.hide {
+    display: none;
+  }
+}
+
+.popup {
+  content: 'x';
+
+  margin: 300px auto;
+  padding: 10px;
+  width: 50%;
+  border: 1px solid #888;
+  background: white;
+}
+
+.close-button {
+  text-decoration: none;
+  color: gray;
+  cursor: default;
+
+  &:hover {
+    background: lightgray;
+  }
+}

@@ -1,5 +1,8 @@
 nav {
   & > a.button {
+    border-radius: 0px;
+    border-right: 1px solid white;
+
     &:first-child {
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
@@ -8,25 +11,6 @@ nav {
       border-top-right-radius: 3px;
       border-bottom-right-radius: 3px;
       border-right: 0px;
-    }
-    cursor: default;
-    outline: 0;
-    background: #9f72e6;
-    border: 0 1px 0 0 solid white;
-    padding: 5px 10px;
-    text-align: center;
-    color: #fff;
-
-    &:hover {
-      background: #b290e7;
-      text-decoration: none;
-    }
-    &:active {
-      background: #7947c9;
-    }
-    &:disabled {
-      cursor: not-allowed;
-      background: #b598e4;
     }
   }
 }

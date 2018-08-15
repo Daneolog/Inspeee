@@ -2,16 +2,14 @@
   <nav style="margin-bottom: 15px">
     <a class="button" routerLink="deposit">Deposit Cash</a>
     <a class="button" routerLink="withdraw">Withdraw Cash</a>
-    <a class="button" routerLink="history">Transaction History</a>
   </nav>
+
+  <hr>
+  <h2>Account Balance</h2>
+  <button disabled="true" style="font-size: 20px; width: 200px; cursor: default">{{balance}}</button>
+  <hr>
 
   <router-outlet></router-outlet>
 
-  <table class="buttons" style="text-align: left">
-    <tr>
-      <td style="text-align: right">
-        <a class="button" routerLink="/lender-dashboard">Next</a>
-      </td>
-    </tr>
-  </table>
+  <a class="button" routerLink="/lender-dashboard">Back</a>
 </div>
