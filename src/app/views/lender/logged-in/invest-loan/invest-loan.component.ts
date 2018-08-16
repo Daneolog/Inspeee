@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DatabaseService } from '../../../../services/database.service';
 import { switchMap } from '../../../../../../node_modules/rxjs/operators';
 import { CacheService } from '../../../../services/cache.service';
@@ -16,7 +16,8 @@ export class InvestLoanComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private databaseService: DatabaseService,
-    private cacheService: CacheService
+    private cacheService: CacheService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -39,8 +40,18 @@ export class InvestLoanComponent implements OnInit {
       .runQuery(
         `UPDATE Loan SET AmountFunded = AmountFunded + ${
           this.loanAmount
-        } WHERE Loan.LoanID = 2;`
+        } WHERE Loan.LoanID = ${this.id};`
       )
       .subscribe(data => console.log(data));
+    this.databaseService
+      .runQuery(
+        `UPDATE LenderBalance SET Balance = Balance - ${
+          this.loanAmount
+        } WHERE LenderBalance.LenderID = ${userID};`
+      )
+      .subscribe(data => {
+        console.log(data);
+        this.router.navigate(['/lender-dashboard']);
+      });
   }
 }

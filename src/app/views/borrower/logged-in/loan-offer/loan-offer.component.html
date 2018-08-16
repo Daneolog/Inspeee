@@ -17,7 +17,7 @@
 
   <div class="center">
     <card *ngFor="let pt of paymentTypes" title="{{pt.length}} months" [selected]="active == pt.id ? 'selected' : 'regular'">
-      <p>Payment/Month: {{pt.payment | currency}}</p>
+      <p>Payment/Month: {{pt.payment | currency:'JPY'}}</p>
       <p>Interest Rate: {{pt.rate | percent}}</p>
 
       <button (click)="select(pt.id)">Select this guy!!!</button>

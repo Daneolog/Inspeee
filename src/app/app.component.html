@@ -1,13 +1,17 @@
 <div class="app">
   <nav class="topNav">
     <div class="navLeft">
-      <a routerLink="/" routerLinkActive="active">
+
+      <a *ngIf="!currentUser" routerLink="/">
+        <img src="https://i.imgur.com/WuBbIAK.png" width="150" height="50">
+      </a>
+      <a *ngIf="currentUser" [routerLink]="currentUser.IsLender == 1 ? 'lender-dashboard' : 'borrower-dashboard'">
         <img src="https://i.imgur.com/WuBbIAK.png" width="150" height="50">
       </a>
     </div>
 
     <div class="navRight">
-      <a *ngIf="!currentUser" routerLink="/login" routerLinkActive="active">Sign in</a>
+      <a *ngIf="!currentUser" routerLink="/login">Sign in</a>
       <div *ngIf="currentUser">
         <p>Hello, {{currentUser.Name}}</p>
         <p>You are a {{currentUser.IsLender == 1 ? 'lender' : 'borrower'}}</p>
@@ -32,10 +36,10 @@
   <br>
   <nav class="bottomNav">
     <div class="navRight">
-      <a routerLink="/contact" routerLinkActive="active">Contact</a>
-      <a routerLink="/about" routerLinkActive="active">About</a>
-      <a routerLink="/privacy" routerLinkActive="active">Privacy Policy</a>
-      <a routerLink="/toc" routerLinkActive="active">Terms and Conditions</a>
+      <a routerLink="/contact">Contact</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/privacy">Privacy Policy</a>
+      <a routerLink="/toc">Terms and Conditions</a>
     </div>
   </nav>
 </div>

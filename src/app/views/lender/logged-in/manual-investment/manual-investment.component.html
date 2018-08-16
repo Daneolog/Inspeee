@@ -14,9 +14,9 @@
     <tr *ngFor="let loan of loans">
       <td>{{loan.InterestRate}}%</td>
       <td>{{loan.Duration}}</td>
-      <td>{{loan.LoanAmount}}</td>
+      <td>{{loan.LoanAmount | currency:'JPY'}}</td>
       <td>{{round(loan.AmountFunded / loan.LoanAmount)}}</td>
-      <td>{{loan.LoanAmount - loan.AmountFunded}}</td>
+      <td>{{(loan.LoanAmount - loan.AmountFunded) | currency:'JPY'}}</td>
       <td>{{loan.MaturityDate}}</td>
       <td>
         <a class="button" [routerLink]="loan.LoanID">&gt;</a>

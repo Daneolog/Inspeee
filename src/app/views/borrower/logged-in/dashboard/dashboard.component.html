@@ -3,19 +3,19 @@
 
   <div *ngIf="currentLoan">
     <card title="Loan Terms">
-      <p>Total loan amount: {{totalLoanAmount | currency}}</p>
-      <p>Interest amount: {{interestAmount | currency}}</p>
+      <p>Total loan amount: {{totalLoanAmount | currency:'JPY'}}</p>
+      <p>Interest amount: {{interestAmount | currency:'JPY'}}</p>
     </card>
 
     <card title="Paid Off Loan">
-      <p>Total paid so far: {{paidLoanAmount | currency}}</p>
+      <p>Total paid so far: {{paidLoanAmount | currency:'JPY'}}</p>
       <p>Payment made: {{months}} {{months == 1 ? 'month' : 'months'}}</p>
     </card>
 
     <card title="To Be Paid">
-      <p>Left to be paid: {{remainingLoanAmount | currency}}</p>
+      <p>Left to be paid: {{remainingLoanAmount | currency:'JPY'}}</p>
       <p>Months left: {{remainingMonths}} {{remainingMonths == 1 ? 'month' : 'months'}}</p>
-      <p>Monthly payment: {{monthlyPayment | currency}}</p>
+      <p>Monthly payment: {{monthlyPayment | currency:'JPY'}}</p>
     </card>
     <div class="form-group">
       Simulate your loan after
@@ -24,4 +24,6 @@
   </div>
 
   <button (click)="router.navigate(['/loan-offer'])" [disabled]="!userInfo || currentLoan">Add a loan</button>
+  <br>
+  <a class="button" routerLink="/bank-details">Bank details</a>
 </div>
